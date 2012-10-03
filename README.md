@@ -1,4 +1,15 @@
-# Puppet rbenv for Boxen
+# RBEnv Puppet Module for Boxen
 
-FIXME: update me bro
+Requires the following boxen modules:
 
+* `boxen`
+* `homebrew`
+
+## Usage
+
+Just installs rbenv.
+You probably want to use the puppet-ruby module instead.
+
+```puppet
+include rbenv
+```
