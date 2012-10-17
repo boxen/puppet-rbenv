@@ -1,3 +1,9 @@
+# Install rbenv and ruby-build, and add environment variables to use them.
+#
+# Usage:
+#
+#     include rbenv
+
 class rbenv {
   require boxen::config
 
@@ -13,7 +19,6 @@ class rbenv {
   }
 
   file { "${boxen::config::envdir}/rbenv.sh":
-    source  => 'puppet:///modules/rbenv/rbenv.sh',
-    require => File[$boxen::config::envdir]
+    source  => 'puppet:///modules/rbenv/rbenv.sh'
   }
 }
