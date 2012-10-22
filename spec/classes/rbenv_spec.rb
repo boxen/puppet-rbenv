@@ -12,6 +12,14 @@ describe 'rbenv' do
 
     should contain_file('/opt/boxen/rbenv').with_ensure('directory')
     should contain_file('/opt/boxen/rbenv/versions').with_ensure('directory')
+    should contain_file('/opt/boxen/rbenv/rbenv.d').with_ensure('directory')
+    should contain_file('/opt/boxen/rbenv/rbenv.d/install').with_ensure('directory')
+
+    should contain_file('/opt/boxen/rbenv/rbenv.d/install/00_try_to_download_ruby_version.bash').with({
+      :ensure => 'present',
+      :mode   => '0755',
+      :source => 'puppet:///modules/rbenv/try_to_download_ruby_version.bash'
+    })
 
     should contain_package('ruby-build').with_ensure('latest')
     should contain_package('rbenv').with_ensure('latest')
