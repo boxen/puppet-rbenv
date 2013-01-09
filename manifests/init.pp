@@ -18,9 +18,9 @@ class rbenv {
       source => 'puppet:///modules/rbenv/try_to_download_ruby_version.bash';
   }
 
-  # we ensure latest of ruby-build for up-to-date ruby definitions
-  package { ['ruby-build', 'rbenv']:
-    ensure => latest
+  package {
+    'rbenv':      ensure => '0.4.0' ;
+    'ruby-build': ensure => '20130104' ;
   }
 
   file { "${boxen::config::envdir}/rbenv.sh":
