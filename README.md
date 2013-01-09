@@ -1,15 +1,3 @@
-# RBEnv Puppet Module for Boxen
+# DEPRECATED
 
-Requires the following boxen modules:
-
-* `boxen`
-* `homebrew`
-
-## Usage
-
-Just installs rbenv.
-You probably want to use the puppet-ruby module instead.
-
-```puppet
-include rbenv
-```
+Use [puppet-ruby](https://github.com/boxen/puppet-ruby) instead.
